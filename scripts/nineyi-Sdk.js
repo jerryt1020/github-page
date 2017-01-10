@@ -24,12 +24,23 @@ var NineYi;
                             this.AddpendBanner();
                             if (this.IsShow) {
                                 var smartAppBannerElem = document.getElementById("smart-app-banner");
-                                this.FixHeaderMobileStyle();
+
                                 if (smartAppBannerElem) {
-                                    window.addEventListener('load', function () {
-                                        window.setTimeout(function () {
+                                    var  PreviousOffsetY = 0;
+                                    window.addEventListener('scroll', function () {
+                                        /*window.setTimeout(function () {
                                             document.body.scrollTop = 52;
-                                        }, 1000);
+                                        }, 1000);*/
+                                        var scrollY = window.scrollY;
+                                        console.log("scrollY:",scrollY);
+                                        if (scrollY < offsetY) { return; }
+
+                                        if (scrollY > PreviousOffsetY) {
+                                            this.FixHeaderMobileStyle(true);
+                                        } else {
+                                            this.FixHeaderMobileStyle(false);
+                                        }
+                                        PreviousOffsetY = scrollY;
                                     });
                                 }
                             }
@@ -38,17 +49,24 @@ var NineYi;
                             }
                         }
                     }
-                    DownloadAppBanner.prototype.FixHeaderMobileStyle = function () {
+                    DownloadAppBanner.prototype.FixHeaderMobileStyle = function (status) {
                         var header_mobile_top = document.getElementById("header_mobile_top");
                         var header_mobile_bottom = document.getElementById("header_mobile_bottom");
-                        if(header_mobile_top){
-                            header_mobile_top.style.position = "relative";
+                        if(status){
+                            if(header_mobile_top){
+                                header_mobile_top.style.position = "relative";
+                            }
+                            if(header_mobile_bottom){
+                                header_mobile_bottom.style.marginTop = "0";
+                            }
+                        } else {
+                            if(header_mobile_top){
+                                header_mobile_top.style.position = "fixed";
+                            }
+                            if(header_mobile_bottom){
+                                header_mobile_bottom.style.marginTop = "130";
+                            }
                         }
-                        if(header_mobile_bottom){
-                            header_mobile_bottom.style.marginTop = "0";
-                        }
-                        console.log("header_mobile_top:",header_mobile_top);
-                        console.log("header_mobile_bottom:",header_mobile_bottom);
                     };
                     DownloadAppBanner.prototype.GetIsMobileBrowser = function () {
                         var check = false;

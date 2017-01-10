@@ -25,20 +25,17 @@ var NineYi;
                             if (this.IsShow) {
                                 var smartAppBannerElem = document.getElementById("smart-app-banner");
                                 this.FixHeaderMobileStyle(true);
+                                var _this = this;
                                 if (smartAppBannerElem) {
                                     var  PreviousOffsetY = 0;
                                     window.addEventListener('scroll', function () {
-                                        /*window.setTimeout(function () {
-                                            document.body.scrollTop = 52;
-                                        }, 1000);*/
                                         var scrollY = window.scrollY;
-                                        console.log("scrollY:",scrollY);
                                         if (scrollY < 130) { return; }
-
+                                        console.log("scrollY:",scrollY);
                                         if (scrollY > PreviousOffsetY) {
-                                            this.FixHeaderMobileStyle(true);
+                                            _this.FixHeaderMobileStyle(true);
                                         } else {
-                                            this.FixHeaderMobileStyle(false);
+                                            _this.FixHeaderMobileStyle(false);
                                         }
                                         PreviousOffsetY = scrollY;
                                     });

@@ -1,1 +1,96 @@
-var NineYi;!function(e){var n;!function(e){var n;!function(e){var n;!function(e){var n=function(){function e(){if(this.Version="1.0.0",this.Domain="http://shop.s3.com.tw/",this.ShopIconUrl="https://diz36nn4q02zr.cloudfront.net/webapi/images/t/512/512/ShopIcon/156/0/211027",this.ShopId="156",this.AppName="美妝保養專賣",this.IsMobile=!1,this.IsShow=!0,this.DownlaodAppUrl="",this.IsMobile=this.GetIsMobileBrowser(),this.IsShow=!(window.sessionStorage.getItem("AdHide")||"https:"===window.location.protocol),this.DownlaodAppUrl=this.Domain+"ref/"+this.ShopId+"/ShopHome/"+this.ShopId+"?utm_source=mweb&utm_medium=download_banner&utm_campaign=ShopHome",this.IsMobile)if(this.LoadFontawesome(),this.AddpendBanner(),this.IsShow){var e=document.getElementById("smart-app-banner");e&&window.addEventListener("load",function(){window.setTimeout(function(){document.body.scrollTop=52},1e3)})}else document.getElementById("smart-app-banner").style.display="none"}return e.prototype.GetIsMobileBrowser=function(){var e=!1;return/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)&&(e=!0),e},e.prototype.LoadFontawesome=function(){var e=document.getElementsByTagName("head")[0],n=document.createElement("link");n.type="text/css",n.rel="stylesheet",n.href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",e.appendChild(n)},e.prototype.AddpendBanner=function(){var e=document.createElement("div");e.id="smart-app-banner";var n='<div class="smart-app-banner" style="background-color:#f8f8f8;color:#595959;position:static;border-bottom:1px solid #dfdfdf;height:50px;"><div class="banner-container" style="margin:0 auto;padding:8px;"><div class="banner-content" style="cursor:pointer;position:relative;font-family:PingFang-SC,sans-serif;"><a class="banner-close-btn" href="javascript: downloadApp.CloseBanner()" style="font-size:9px;color:#595959;margin-right:10px;"><i class="fa fa-times fa-2x" aria-hidden="true"></i></a><img class="banner-shop-icon" src="https://diz36nn4q02zr.cloudfront.net/webapi/images/t/512/512/ShopIcon/156/0/211027" style="display:inline-block;vertical-align:middle;border-radius:7px;width:34px;height:34px;"><span class="banner-body" style="display:inline-block;vertical-align:middle;padding:0 10px;font-size:14px;width:55%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><a class="banner-name" target="_blank" href="javascript: downloadApp.Download()" style="display:block;line-height:16px;font-family:PingFang-SC,sans-serif;font-size:12px;color:#595959;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-decoration:none">'+this.AppName+'</a><a class="banner-desc" style="display:block;font-size:12px;color:#b7b7b7;text-decoration:none">立刻使用官方APP</a></span><div class="banner-download-btn" style="width:58px;line-height:26px;border-radius:3px;border:solid 1px #595959;position:absolute;right:0;top:2px;text-align:center;"><a class="banner-download-btn-text" href="javascript: downloadApp.Download()" style="color:#595959;font-family:PingFang-SC,sans-serif;font-size:13px;text-decoration:none">下載</a></div></div></div></div>';e.innerHTML=n,e.style.position="relative";document.getElementById("header_mobile_top");document.body&&(document.body.insertBefore(e,document.body.childNodes[0]),console.log("document.body:",document.body.childNodes[0]))},e.prototype.CloseBanner=function(){this.IsShow=!1,document.getElementById("smart-app-banner").style.display="none",window.sessionStorage.setItem("AdHide","ture")},e.prototype.Download=function(){window.open(this.DownlaodAppUrl,"_blank")},e}();e.DownloadAppBanner=n}(n=e.SDK||(e.SDK={}))}(n=e.FrontEnd||(e.FrontEnd={}))}(n=e.Mall||(e.Mall={}))}(NineYi||(NineYi={}));var downloadApp=new NineYi.Mall.FrontEnd.SDK.DownloadAppBanner;
+var NineYi;
+(function (NineYi) {
+    var Mall;
+    (function (Mall) {
+        var FrontEnd;
+        (function (FrontEnd) {
+            var SDK;
+            (function (SDK) {
+                var DownloadAppBanner = (function () {
+                    function DownloadAppBanner() {
+                        this.Version = "1.0.0";
+                        this.Domain = "http://shop.s3.com.tw/";
+                        this.ShopIconUrl = "https://diz36nn4q02zr.cloudfront.net/webapi/images/t/512/512/ShopIcon/156/0/211027";
+                        this.ShopId = "156";
+                        this.AppName = "美妝保養專賣";
+                        this.IsMobile = false;
+                        this.IsShow = true;
+                        this.DownlaodAppUrl = "";
+                        this.IsMobile = this.GetIsMobileBrowser();
+                        this.IsShow = !window.sessionStorage.getItem("AdHide");
+                        this.DownlaodAppUrl = this.Domain + "ref/" + this.ShopId + "/ShopHome/" + this.ShopId + "?utm_source=mweb&utm_medium=download_banner&utm_campaign=ShopHome";
+                        if (this.IsMobile) {
+                            this.LoadFontawesome();
+                            this.AddpendBanner();
+                            if (this.IsShow) {
+                                var smartAppBannerElem = document.getElementById("smart-app-banner");
+                                if (smartAppBannerElem) {
+                                    window.addEventListener('load', function () {
+                                        window.setTimeout(function () {
+                                            document.body.scrollTop = 52;
+                                        }, 1000);
+                                    });
+                                }
+                            }
+                            else {
+                                document.getElementById("smart-app-banner").style.display = "none";
+                            }
+                        }
+                    }
+                    DownloadAppBanner.prototype.GetIsMobileBrowser = function () {
+                        var check = false;
+                        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                            check = true;
+                        }
+                        return check;
+                    };
+                    DownloadAppBanner.prototype.LoadFontawesome = function () {
+                        var headID = document.getElementsByTagName("head")[0];
+                        var newCss = document.createElement('link');
+                        newCss.type = 'text/css';
+                        newCss.rel = "stylesheet";
+                        newCss.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+                        headID.appendChild(newCss);
+                    };
+                    DownloadAppBanner.prototype.AddpendBanner = function () {
+                        var smart_app_banner = document.createElement('div');
+                        smart_app_banner.id = "smart-app-banner";
+                        var bannerHtml = '<div class="smart-app-banner" style="background-color:#f8f8f8;color:#595959;position:static;border-bottom:1px solid #dfdfdf;height:50px;">' +
+                            '<div class="banner-container" style="margin:0 auto;padding:8px;">' +
+                            '<div class="banner-content" style="cursor:pointer;position:relative;font-family:PingFang-SC,sans-serif;">' +
+                            '<a class="banner-close-btn" href="javascript: downloadApp.CloseBanner()" style="font-size:9px;color:#595959;margin-right:10px;"><i class="fa fa-times fa-2x" aria-hidden="true"></i></a>' +
+                            '<img class="banner-shop-icon" src="https://diz36nn4q02zr.cloudfront.net/webapi/images/t/512/512/ShopIcon/156/0/211027" style="display:inline-block;vertical-align:middle;border-radius:7px;width:34px;height:34px;">' +
+                            '<span class="banner-body" style="display:inline-block;vertical-align:middle;padding:0 10px;font-size:14px;width:55%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' +
+                            '<a class="banner-name" target="_blank" href="javascript: downloadApp.Download()" style="display:block;line-height:16px;font-family:PingFang-SC,sans-serif;font-size:12px;color:#595959;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-decoration:none">' + this.AppName + '</a>' +
+                            '<a class="banner-desc" style="display:block;font-size:12px;color:#b7b7b7;text-decoration:none">立刻使用官方APP</a>' +
+                            '</span>' +
+                            '<div class="banner-download-btn" style="width:58px;line-height:26px;border-radius:3px;border:solid 1px #595959;position:absolute;right:0;top:2px;text-align:center;">' +
+                            '<a class="banner-download-btn-text" href="javascript: downloadApp.Download()" style="color:#595959;font-family:PingFang-SC,sans-serif;font-size:13px;text-decoration:none">下載</a>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                        smart_app_banner.innerHTML = bannerHtml;
+                        smart_app_banner.style.position = "relative";
+                        var header_mobile = document.getElementById("header_mobile_top");
+                        if (document.body) {
+                            document.body.insertBefore(smart_app_banner, document.body.childNodes[0]);
+                            console.log("document.body:", document.body.childNodes[0]);
+                        }
+                    };
+                    DownloadAppBanner.prototype.CloseBanner = function () {
+                        this.IsShow = false;
+                        document.getElementById("smart-app-banner").style.display = "none";
+                        window.sessionStorage.setItem("AdHide", 'ture');
+                    };
+                    DownloadAppBanner.prototype.Download = function () {
+                        window.open(this.DownlaodAppUrl, "_blank");
+                    };
+                    return DownloadAppBanner;
+                }());
+                SDK.DownloadAppBanner = DownloadAppBanner;
+            })(SDK = FrontEnd.SDK || (FrontEnd.SDK = {}));
+        })(FrontEnd = Mall.FrontEnd || (Mall.FrontEnd = {}));
+    })(Mall = NineYi.Mall || (NineYi.Mall = {}));
+})(NineYi || (NineYi = {}));
+var downloadApp = new NineYi.Mall.FrontEnd.SDK.DownloadAppBanner();

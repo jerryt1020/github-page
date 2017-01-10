@@ -27,17 +27,14 @@ var NineYi;
                                 this.FixHeaderMobileStyle(true);
                                 var _this = this;
                                 if (smartAppBannerElem) {
-                                    var  PreviousOffsetY = 0;
                                     window.addEventListener('scroll', function () {
                                         var scrollY = window.scrollY;
-                                        if (scrollY < 130) { return; }
                                         console.log("scrollY:",scrollY);
-                                        if (scrollY > PreviousOffsetY) {
+                                        if (scrollY > 130) {
                                             _this.FixHeaderMobileStyle(false);
                                         } else {
                                             _this.FixHeaderMobileStyle(true);
                                         }
-                                        PreviousOffsetY = scrollY;
                                     });
                                 }
                             }

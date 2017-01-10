@@ -22,6 +22,7 @@ var NineYi;
                         if (this.IsMobile) {
                             this.LoadFontawesome();
                             this.AddpendBanner();
+                            console.log("IsShow:",this.IsShow);
                             if (this.IsShow) {
                                 var smartAppBannerElem = document.getElementById("smart-app-banner");
                                 if (smartAppBannerElem) {

@@ -33,9 +33,9 @@ var NineYi;
                                         if (scrollY < 130) { return; }
                                         console.log("scrollY:",scrollY);
                                         if (scrollY > PreviousOffsetY) {
-                                            _this.FixHeaderMobileStyle(true);
-                                        } else {
                                             _this.FixHeaderMobileStyle(false);
+                                        } else {
+                                            _this.FixHeaderMobileStyle(true);
                                         }
                                         PreviousOffsetY = scrollY;
                                     });

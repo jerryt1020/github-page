@@ -24,7 +24,7 @@ var NineYi;
                             this.AddpendBanner();
                             if (this.IsShow) {
                                 var smartAppBannerElem = document.getElementById("smart-app-banner");
-
+                                this.FixHeaderMobileStyle(true);
                                 if (smartAppBannerElem) {
                                     var  PreviousOffsetY = 0;
                                     window.addEventListener('scroll', function () {
@@ -33,7 +33,7 @@ var NineYi;
                                         }, 1000);*/
                                         var scrollY = window.scrollY;
                                         console.log("scrollY:",scrollY);
-                                        if (scrollY < offsetY) { return; }
+                                        if (scrollY < 130) { return; }
 
                                         if (scrollY > PreviousOffsetY) {
                                             this.FixHeaderMobileStyle(true);

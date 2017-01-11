@@ -110,6 +110,7 @@ var NineYi;
                     };
                     return DownloadAppBanner;
                 }());
+                SDK.DownloadAppBanner = DownloadAppBanner;
             })(SDK = FrontEnd.SDK || (FrontEnd.SDK = {}));
         })(FrontEnd = Mall.FrontEnd || (Mall.FrontEnd = {}));
     })(Mall = NineYi.Mall || (NineYi.Mall = {}));

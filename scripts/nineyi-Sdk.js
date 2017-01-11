@@ -22,7 +22,6 @@ var NineYi;
                         this.DownlaodAppUrl = this.Domain + "ref/" + this.ShopId + "/ShopHome/" + this.ShopId + "?utm_source=mweb&utm_medium=download_banner&utm_campaign=ShopHome";
                         if (this.IsMobile) {
                             this.LoadFontawesome();
-                            this.AddpendBanner();
                             if (this.IsShow) {
                                 this.ModifyHeaderMobileStyle(false);
                                 window.addEventListener('scroll', function () {

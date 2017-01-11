@@ -21,7 +21,6 @@ var NineYi;
                         this.IsShow = !window.sessionStorage.getItem("AdHide");
                         this.DownlaodAppUrl = this.Domain + "ref/" + this.ShopId + "/ShopHome/" + this.ShopId + "?utm_source=mweb&utm_medium=download_banner&utm_campaign=ShopHome";
                         if (this.IsMobile) {
-                            this.LoadFontawesome();
                             if (this.IsShow) {
                                 this.ModifyHeaderMobileStyle(false);
                                 window.addEventListener('scroll', function () {

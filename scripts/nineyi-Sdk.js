@@ -8,7 +8,6 @@ var NineYi;
             (function (SDK) {
                 var DownloadAppBanner = (function () {
                     function DownloadAppBanner() {
-                        var _this = this;
                         this.Version = "1.0.0";
                         this.Domain = "http://shop.s3.com.tw/";
                         this.ShopIconUrl = "https://diz36nn4q02zr.cloudfront.net/webapi/images/t/512/512/ShopIcon/156/0/211027";
@@ -17,26 +16,6 @@ var NineYi;
                         this.IsMobile = false;
                         this.IsShow = true;
                         this.DownlaodAppUrl = "";
-                        this.IsMobile = this.GetIsMobileBrowser();
-                        this.IsShow = !window.sessionStorage.getItem("AdHide");
-                        this.DownlaodAppUrl = this.Domain + "ref/" + this.ShopId + "/ShopHome/" + this.ShopId + "?utm_source=mweb&utm_medium=download_banner&utm_campaign=ShopHome";
-                        if (this.IsMobile) {
-                            if (this.IsShow) {
-                                this.ModifyHeaderMobileStyle(false);
-                                window.addEventListener('scroll', function () {
-                                    var scrollY = window.scrollY;
-                                    if (scrollY > 130) {
-                                        _this.ModifyHeaderMobileStyle(true);
-                                    }
-                                    else {
-                                        _this.ModifyHeaderMobileStyle(false);
-                                    }
-                                });
-                            }
-                            else {
-                                document.getElementById("smart-app-banner").style.display = "none";
-                            }
-                        }
                     }
                     DownloadAppBanner.prototype.GetIsMobileBrowser = function () {
                         var check = false;
